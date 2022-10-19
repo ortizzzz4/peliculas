@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+
+<div class="container  mt-16  ">
+  
+<form method="post">
+{% csrf_token %}
+
+<div class="item" >
+<p>Login</p>    
+<img src="static/img/login/usuario.png" alt="">   
+</div>
+
+<div class="item" >
+<label for="username">Username</label>
+<input type="text" name="username" class=" form-control">
+</div>
+
+<div class="item">
+    <label for="password">Password</label>
+    <input type="password" name="password" class=" form-control">
+    </div>
+    <button type="submit" class=" btn btn-primary mt-3 bg-primary text-black buton button_login">Enviar</button>
+
+
+</div>
+
+</form>
+
+</div>
+
+<style>
+    .container{
+        width: 520px;
+        height: auto;
+        border-radius: 12px;
+        background-color: rgb(7, 8, 88);
+        display: flex;
+        position: relative;
+        
+    }
+    .item{
+        
+         
+        margin:  2px 3px;
+        width: 500px;
+        height: auto;
+
+    }
+    img{
+        width: 100px;
+        height: auto;
+        margin-left: 40%;
+        margin-right: 50%;
+    }
+
+    input{
+        border-bottom: 15px solid rgb(17, 18, 80);
+        border-radius: 10px;
+        color: black;
+        font-size: 12px;
+    }
+    p{
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        color: hsla(221, 95%, 61%, 0.664);
+        text-align: center;
+    }
+    label{
+        color: hsl(219, 71%, 34%);
+    }
+    .buton{
+        margin-left: 40%;
+        margin-right: 50%;
+    }
+   
+    @media screen and (max-width: 700px){
+
+        img{
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        .container{
+            width: 300px;
+            height: auto;
+        }
+        .item{
+            width: 280px;
+            height: auto;
+        }
+        label{
+
+            width: auto;
+
+        }
+        p{
+            text-align: center;
+        }
+
+        .buton{
+            margin-left: 35%;
+            margin-right:30% ;
+        }
+
+    }
+    
+</style>
+
+
+
+{% endblock %}
+
+

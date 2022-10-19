@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load cart_extras %}
+
+{% block content %}
+
+{% if queryset.image %}
+<div class="col-3">
+
+    <img src="{{ queryset.image.url }}" alt="Imagen del producto" width="200" height="200">
+ 
+</div>
+{% endif %}
+<hr>
+<div class="col">
+  <div class="h2 font-weight-bold text-success">
+    {{ quantity | quantity_add_format }} to favorite
+  </div>
+
+  <div class="">
+    <a href="{#% url 'peliculas:pelicula' pelicula.slug %#}">
+      {{ pelicula.nombre }}
+    </a>
+  </div>
+
+  <hr>
+  <div class="mt-2">
+    <a href="{% url 'carts:cart' %}" class="btn btn-info"> watch movies added</a>
+  </div>
+  <hr>
+    <a href="{% url 'index' %}" class="btn btn-secondary"> start again</a>
+  </div>
+</div>
+
+{% endblock %}

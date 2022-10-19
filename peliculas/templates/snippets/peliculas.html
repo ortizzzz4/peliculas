@@ -1,0 +1,102 @@
+
+
+<div class="card h-100">
+  {% if pelicula.image %}
+
+  <img src="{{pelicula.image.url}}"  alt="Imagen del producto" height="200"  >
+   {% endif %}
+   <div class="card-body bg-black text text-white ">
+  <h5 class="card-title uppercase">{{pelicula.nombre}}</h5>
+  <p class="card-text">{{ pelicula.descripcion |truncatechars_html:20 }}</p>
+  <a href="{% url 'peliculas:pelicula' pelicula.slug %}" class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0 btn btn-primary">Ver mas</a>
+
+   
+   </div>
+ 
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  /*@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');*/
+
+  /*.title-cards{
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #7a7a7a;
+  }*/
+
+  /*.card1:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+  }
+  .card1 img{
+    width: 100%;
+    height: 210px;
+  }
+  .card1 .contenido-card{
+    padding: 15px;
+    text-align: center;
+  }
+  .card1 .contenido-card h3{
+    margin-bottom: 15px;
+    color: #7a7a7a;
+  }
+  .card1 .contenido-card p{
+    line-height: 1.8;
+    color: #6a6a6a;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .card1 .contenido-card a{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #2fb4cc;
+    background-color: blue;
+    border: 1px solid #2fb4cc;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    margin-bottom: 5px;
+  }
+  .card1 .contenido-card a:hover{
+    background: #2fb4cc;
+    color: #fff;
+  }
+  @media only screen and (min-width:320px) and (max-width:1444px){
+    .container-card{
+      flex-wrap: wrap;
+    }
+    .card1{
+      margin: 15px;
+    }
+  } */
+</style>

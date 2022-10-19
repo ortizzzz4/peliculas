@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+
+
+
+
+
+   
+ 
+/* Login*/
+
+.button_login{
+    background: linear-gradient(180deg, #65bce8 0%, #306485 49%, #048b38 50%, #038649 100%);
+    background-size: 1px 100px;
+    transition: all .3s;
+}
+
+.button_login:hover{
+    background-position: 0 -50px;
+    transition: all .3s;
+    
+}
+
+/* h4 messages*/
+
+.messages{
+    
+    
+    color: azure;
+}
+

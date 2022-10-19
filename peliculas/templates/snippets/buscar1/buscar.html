@@ -1,0 +1,12 @@
+<div class=" mt-4">
+
+    <form action="{% url 'peliculas:buscar' %}">
+        <div class="input-group">
+            <input type="text" name="q" value="{{ query }}" class="form-control " placeholder="Buscar">
+            <div class="input-group-append">
+              <input type="submit" name="" value="Buscar" class="btn btn-primary bg-primary">
+            </div>
+        </div>
+    </form>
+    
+    </div>

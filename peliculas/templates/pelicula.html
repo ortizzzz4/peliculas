@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card   border-4 bg-transparent text-center">
+<div class="col card mt-2 bg-black text-center ">
+
+<div class="img">
+{% if pelicula.image %}
+<img src="{{ pelicula.image.url }}" alt="samsung 10" width="250" height="200" class="img1">
+{% endif %}
+</div>
+
+</div>
+ 
+{% csrf_token %}
+<div class="col ">
+<div class="h2 text-white font-serif">{{ pelicula.nombre }}</div>
+<div class="h5 text-white">
+    <span class="text-danger font-serif">  {{ pelicula.descripcion }}</span>
+</div>
+
+<div class=" mt-3 ">
+    <p class="card-text font-serif text-primary ">{{ pelicula.sipnosis }}</p>
+</div>
+
+
+
+<div class="mt-3" >
+    
+    <h2 class=" text-white font-serif ">{{pelicula.autor_res}}</h2>
+</div>
+
+<div class="mt-3">
+   <p class="text text-white font-serif"> <h4 class=" text-primary">Fecha De Publicacion : {{ pelicula.created_at }} </h4> </p>
+</div>
+
+
+
+<div class="">
+    {% include 'carts/snippets/add.html' %} <i class="bi bi-check-circle-fill"></i>
+  </div>
+
+</div>
+</div>
+
+<style>
+    .img{
+      border-radius: 12px;
+   
+    width: 40%;
+    display: flexbox;
+  
+   margin-left: 40%;
+    }
+    .img1{
+        border-radius: 12px;
+    }
+
+    .img:hover{
+        transform:translateX(-2%);
+    }
+</style>
+
+
+{% endblock %}

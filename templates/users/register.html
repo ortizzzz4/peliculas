@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-16">
+    <form method="post">
+        {% csrf_token %}
+    
+        <div class="item1">
+        <p>Registro</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+    </div>
+  
+{% for field in form %}
+<div class="form-label item1 tex text-blue-600">
+    {{ field.label_tag }}
+    {{ field }}
+   
+    
+
+</div>
+{% endfor %}
+
+        <button type="submit" class=" btn btn-primary mt-4 buton"> Registrarse</button>
+    </form>
+
+</div>
+
+<style>
+    .container{
+        background-color: rgb(7, 8, 88);
+        width: 500px;
+        height: auto;
+        border-radius: 12px;
+    }
+    .item1{
+   
+        margin: 3px;
+    }
+    svg{
+        margin-left: 40%;
+        margin-right: 50%;
+    }
+    p{
+        color: hsla(221, 95%, 61%, 0.664);
+        text-align: center;
+        font-size: 15px;
+    }
+   .buton{
+    margin-left: 40%;
+    margin-right: 50%;
+   }
+
+   @media screen and (max-width: 700px){
+
+    img{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    .container{
+        width: 300px;
+        height: auto;
+    }
+    .item{
+        width: 280px;
+        height: auto;
+    }
+    svg{
+        margin-left: 35%;
+        margin-right: 40%;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    .buton{
+        margin-left: 35%;
+        margin-right:30% ;
+    }
+
+}
+</style>
+
+{% endblock %}

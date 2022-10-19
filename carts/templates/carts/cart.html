@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{#% load product_extras %#}
+
+{% block content %}
+  {% if cart.products.exists %}
+    <div class="col-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">ver</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          {% for pelicula in cart.products.all %}
+          {#% for cp in cart.product_related %#}
+            {#% with product=cp.product %#}
+              <tr>
+                <th>{{ forloop.counter }}</th>
+                <th>
+                  {% if pelicula.image %}
+                    <img src="{{ pelicula.image.url }}" alt="Imagen del producto" width="100" height="100">
+                  {% endif %}
+                </th>
+                <th>
+                  <a href="{#% url 'peliculas:pelicula' pelicula.slug %#}">{{ pelicula.nombre }}</a>
+                  {% include 'carts/snippets/remove.html' %}
+                </th>
+                <th>{{ quantity }}</th>
+                <th class=" text-primary">{{ pelicula.created_at }}</th>
+                
+              </tr>
+            {#% endwith %#}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  
+  {% else %}
+    <div class="col">
+      <p class="h3">Vacio</p>
+      <a class="btn btn-primary" href="{% url 'index' %}">volver</a>
+    </div>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<div class="container1-card">
+    {% for object in pelicula_list %}
+        <div class="col-3 mt-5 card-buscar">
+          {% include 'snippets/peliculas.html'  with pelicula=object %}
+  
+        </div>
+          
+        
+      {% endfor %}
+  </div>
+
+  <style>
+   .container1-card{
+    flex-wrap: wrap;
+    display: flex;
+    margin: 5px;
+    font-family: Serif;
+    
+    
+    
+
+   }
+   .card-buscar{
+   
+    margin: 1rem;
+    width: 300px;
+    flex-direction: row;
+   }
+
+   @media screen and (max-width: 700px){
+    .container1-card{
+        flex-direction: column;
+    }
+    .card-buscar{
+        margin: 0;
+    }
+   }
+
+
+   
+  </style>
